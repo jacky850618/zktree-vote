@@ -4,19 +4,19 @@
     <div class="row justify-content-md-center">
       <div class="col-lg-4">
         <div class="text-center vstack gap-3">
-          <h1>Your commitment</h1>
+          <h1>您的承诺 </h1>
           <img :src="qrcodeDataUrl" />
           <div
             v-if="commitment"
             v-html="splitTwoLines(commitment.commitment)"
           ></div>
           <button class="btn btn-info" @click="copyToClipboard">
-            Copy to clipboard
+            复制到粘贴板
           </button>
           <button class="btn btn-danger" @click="resetCommitment">
-            Reset commitment
+            重置承诺
           </button>
-          <a href="#/" class="btn btn-primary">Back</a>
+          <a href="#/" class="btn btn-primary">回退</a>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@ export default class VoterRegistration extends Vue {
 
   public copyToClipboard() {
     copyToClipboard(this.commitment.commitment);
-    alert("Successfully copied to the clipboard");
+    alert("成功复制到粘贴板");
   }
 
   public resetCommitment() {

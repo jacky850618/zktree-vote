@@ -4,14 +4,14 @@
     <div class="row justify-content-md-center">
       <div class="col-lg-4">
         <div class="text-center vstack gap-3">
-          <h1>Validator tool</h1>
+          <h1>2024美国总统大选投票验证器工具</h1>
           <div id="reader" width="400px"></div>
-          <input type="text" placeholder="commitment" v-model="commitment" />
-          <input type="text" placeholder="unique hash" v-model="uniqueHash" />
+          <input type="text" placeholder="承诺" v-model="commitment" />
+          <input type="text" placeholder="唯一哈希" v-model="uniqueHash" />
           <button class="btn btn-info" @click="sendToBlockchain">
-            Send to blockchain
+            提交验证
           </button>
-          <a href="#/" class="btn btn-primary">Back</a>
+          <a href="#/" class="btn btn-primary">回退</a>
         </div>
       </div>
     </div>
@@ -56,11 +56,11 @@ export default class ValidatorTool extends Vue {
     const contracts = await (await fetch("contracts.json")).json();
     const contract = new ethers.Contract(contracts.zktreevote, abi, signer);
     if (!this.commitment) {
-      alert("Commitment is required");
+      alert("需要承诺(Commitment)");
       return;
     }
     if (!this.uniqueHash) {
-      alert("Unique hash is required");
+      alert("需要唯一哈希(Unique hash)");
       return;
     }
     try {

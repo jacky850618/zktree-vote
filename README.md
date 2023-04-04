@@ -1,15 +1,15 @@
 # zktree-vote
-Anonymous voting on Ethereum blockchain using zero knowledge proof
+使用零知识证明构建基于以太坊区块链的简易匿名投票系统
 
 ## Usage
 
-- Clone the repository by `git clone https://github.com/TheBojda/zktree-vote.git`
-- Install wget (by `apt-get install wget` on Ubuntu/Debian)
-- Install the project dependencies and prepare by `npm install` in the project directory
-- Start a Hardhat node by `npx hardhat node` in the project directory
-- In another terminal deploy the smartcontract by `npm run deploy`
-- Start the app by `npm start`
+- 通过 `https://github.com/jacky850618/zktree-vote` 克隆代码仓
+- 在项目目录下通过`npm install` 安装项目依赖和准备
+- 在项目目录中通过 `npx hardhat node` 启动一个 Hardhat 节点
+- 在另一个终端通过 `npm run deploy` 部署智能合约
+- 通过 `npm start` 启动应用程序
 
-The app uses MetaMask to connect the blockchain, so the MetaMask extension have to be installed, and connected to the Hardhat local node. The smart contract owner is the first Hardhat account, and the second account is set as a validator by the deployment script.
+该应用程序使用 MetaMask 连接区块链，因此必须安装 MetaMask 扩展，并连接到 Hardhat 本地节点。 
+智能合约所有者是第一个 Hardhat 账户，第二个账户被部署脚本设置为验证者。
 
-For more details, please read my article on [Medium](https://thebojda.medium.com/how-i-built-an-anonymous-voting-system-on-the-ethereum-blockchain-using-zero-knowledge-proof-d5ab286228fd)
+有关更多详细信息，请阅读我的[知乎文章](https://zhuanlan.zhihu.com/p/619202797)

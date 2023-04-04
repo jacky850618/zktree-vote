@@ -2,56 +2,44 @@
   <main role="main" class="container">
     <div style="padding-top: 7rem" class="d-none d-lg-block"></div>
     <div class="row justify-content-md-center">
-      <div class="col-lg-4">
+      <div class="col-lg-6">
         <div class="text-center vstack gap-3">
-          <h1>Vote</h1>
-          Choose one option
+          <h1>2024美国总统大选投票</h1>
+          选择一个总统候选人
           <div class="btn-group-vertical" role="group">
             <input
               type="radio"
               class="btn-check"
               name="vbtn-radio"
               id="vbtn-radio1"
-              @click="option = 1"
-            />
-            <label class="btn btn-outline-dark" for="vbtn-radio1"
-              >1st option</label
-            >
+              @click="option = 1" />
+            <label class="btn btn-outline-dark" for="vbtn-radio1">约翰·博尔顿（John Robert Bolton）</label>
             <input
               type="radio"
               class="btn-check"
               name="vbtn-radio"
               id="vbtn-radio2"
-              @click="option = 2"
-            />
-            <label class="btn btn-outline-dark" for="vbtn-radio2"
-              >2nd option</label
-            >
+              @click="option = 2"/>
+            <label class="btn btn-outline-dark" for="vbtn-radio2">小约瑟夫·罗宾内特·拜登（Joseph Robinette Biden Jr.）</label>
             <input
               type="radio"
               class="btn-check"
               name="vbtn-radio"
               id="vbtn-radio3"
-              @click="option = 3"
-            />
-            <label class="btn btn-outline-dark" for="vbtn-radio3"
-              >3rd option</label
-            >
+              @click="option = 3"/>
+            <label class="btn btn-outline-dark" for="vbtn-radio3">小劳伦斯·约瑟夫·霍根（Lawrence Joseph Hogan Jr.）</label>
             <input
               type="radio"
               class="btn-check"
               name="vbtn-radio"
               id="vbtn-radio4"
-              @click="option = 4"
-            />
-            <label class="btn btn-outline-dark" for="vbtn-radio4"
-              >4th option</label
-            >
+              @click="option = 4"/>
+            <label class="btn btn-outline-dark" for="vbtn-radio4">蒂姆·斯科特（Timothy Eugene）</label>
           </div>
           <button class="btn btn-info" @click="sendToBlockchain">
-            Send to blockchain
+            提交投票
           </button>
-          <a href="#/" class="btn btn-primary">Back</a>
+          <a href="#/" class="btn btn-primary">回退</a>
         </div>
       </div>
     </div>
@@ -72,7 +60,7 @@ export default class Vote extends Vue {
 
   async sendToBlockchain() {
     if (!this.option) {
-      alert("Please choose one!");
+      alert("请选择一个总统候选人!");
       return;
     }
 
@@ -80,7 +68,7 @@ export default class Vote extends Vue {
       localStorage.getItem("zktree-vote-commitment")
     );
     if (!commitment) {
-      alert("No commitment generated, please register!");
+      alert("未生成承诺, 请进行投票登记!");
       return;
     }
 
