@@ -7,6 +7,11 @@ const TREE_LEVELS = 20;
 
 async function main() {
     const signers = await ethers.getSigners()
+    console.log(signers)
+    signers.forEach(function (signer) {
+        console.log(signer.address);
+    }); 
+
     const MiMCSponge = new ethers.ContractFactory(mimcSpongecontract.abi, mimcSpongecontract.createCode(SEED, 220), signers[0])
     const mimcsponge = await MiMCSponge.deploy()
     console.log(`MiMC sponge hasher address: ${mimcsponge.address}`)

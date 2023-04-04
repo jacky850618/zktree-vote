@@ -4,6 +4,7 @@
     <div class="row justify-content-md-center">
       <div class="col-lg-6">
         <div class="text-center vstack gap-3">
+          <a href="#/" class="btn btn-primary">回退</a>
           <h1>2024美国总统大选投票</h1>
           选择一个总统候选人
           <div class="btn-group-vertical" role="group">
@@ -39,7 +40,6 @@
           <button class="btn btn-info" @click="sendToBlockchain">
             提交投票
           </button>
-          <a href="#/" class="btn btn-primary">回退</a>
         </div>
       </div>
     </div>
@@ -68,7 +68,7 @@ export default class Vote extends Vue {
       localStorage.getItem("zktree-vote-commitment")
     );
     if (!commitment) {
-      alert("未生成承诺, 请进行投票登记!");
+      alert("未生成选票, 请进行投票登记!");
       return;
     }
 

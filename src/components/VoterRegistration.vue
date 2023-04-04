@@ -4,7 +4,8 @@
     <div class="row justify-content-md-center">
       <div class="col-lg-4">
         <div class="text-center vstack gap-3">
-          <h1>您的承诺 </h1>
+          <a href="#/" class="btn btn-primary">回退</a>
+          <h1>您的选票 </h1>
           <img :src="qrcodeDataUrl" />
           <div
             v-if="commitment"
@@ -14,9 +15,8 @@
             复制到粘贴板
           </button>
           <button class="btn btn-danger" @click="resetCommitment">
-            重置承诺
+            重置选票
           </button>
-          <a href="#/" class="btn btn-primary">回退</a>
         </div>
       </div>
     </div>

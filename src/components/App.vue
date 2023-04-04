@@ -4,7 +4,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-facing-decorator";
-
 import Home from "./Home.vue";
 import ValidatorTool from "./ValidatorTool.vue";
 import VoterRegistration from "./VoterRegistration.vue";

@@ -4,12 +4,12 @@
     <div class="row justify-content-md-center">
       <div class="col-lg-4">
         <div class="text-center vstack gap-3">
+          <a href="#/" class="btn btn-primary">回退</a>
           <h1>2024美国总统大选投票结果</h1>
           <div class="text-start">约翰·博尔顿（John Robert Bolton）{{ options[0] }}</div>
           <div class="text-start">小约瑟夫·罗宾内特·拜登（Joseph Robinette Biden Jr.）: {{ options[1] }}</div>
           <div class="text-start">小劳伦斯·约瑟夫·霍根（Lawrence Joseph Hogan Jr.）: {{ options[2] }}</div>
           <div class="text-start">蒂姆·斯科特（Timothy Eugene）: {{ options[3] }}</div>
-          <a href="#/" class="btn btn-primary">回退</a>
         </div>
       </div>
     </div>
@@ -32,9 +32,7 @@ export default class Vote extends Vue {
     const abi = [
       "function getOptionCounter(uint _option) external view returns (uint)",
     ];
-    const provider = new ethers.providers.Web3Provider(
-      (window as any).ethereum
-    );
+    const provider = new ethers.providers.Web3Provider((window as any).ethereum)
     const signer = provider.getSigner();
     const contracts = await (await fetch("contracts.json")).json();
     const contract = new ethers.Contract(contracts.zktreevote, abi, signer);
